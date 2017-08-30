@@ -8,13 +8,6 @@ import (
 	"net/http"
 )
 
-func (v *VSlack) sendWithChannel(e chan error) {
-	if err := v.send(); err != nil {
-		e <- err
-	}
-	e <- nil
-}
-
 func (v *VSlack) send() error {
 	b, err := json.Marshal(v)
 	if err != nil {

@@ -12,7 +12,6 @@ type Interface interface {
 	SetIconEmoji(i string) *VSlack
 	SetMessage(m string) *VSlack
 	Send() error
-	SendAsync(e chan error)
 	SetAttachments(a ...Attachment) *VSlack
 	validate() error
 }
@@ -37,7 +36,7 @@ func NewVSlackAttachment() Attachment {
 	return Attachment{}
 }
 
-// SetIncomingwebHookURI sets the incoming web hook
+// SetIncomingWebhookURI sets the incoming web hook
 func (v *VSlack) SetIncomingWebhookURI(h string) *VSlack {
 	v.IncomingWebhookURI = h
 	return v
