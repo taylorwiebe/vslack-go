@@ -1,6 +1,6 @@
 # VSlack - go
 ### Version 1.0.0
-Send slack messages to a slack incoming web hook in go
+Send messages to slack using a slack incoming web hook in Go.
 
 ## Examples
 ### synchronous
