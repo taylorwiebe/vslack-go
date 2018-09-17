@@ -1,5 +1,5 @@
 # VSlack - Go
-### Version 1.0.0
+### Version 1.1.0
 Send messages to slack using a slack incoming web hook in Go.
 
 ## Examples
@@ -66,6 +66,9 @@ func attach() {
 
 
 ## Change Log
+
+### 1.1.0
+- Add implementation for SendAsync
 
 ### 1.0.0
 - Initial Release

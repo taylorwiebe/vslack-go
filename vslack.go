@@ -81,6 +81,14 @@ func (v *VSlack) Send() error {
 	return v.send()
 }
 
+// SendAsync sends the message asynchronously
+func (v *VSlack) SendAsync(e chan error) {
+	if err := v.validate(); err != nil {
+		e <- err
+	}
+	v.send()
+}
+
 func (v *VSlack) validate() error {
 	if v.IncomingWebhookURI == "" {
 		return errors.New("VSlack needs an incoming web hook")
