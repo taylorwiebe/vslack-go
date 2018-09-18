@@ -6,7 +6,7 @@ import (
 
 // Interface is a VSlack interface
 type Interface interface {
-	SetIncomingwebHookURI(h string) *VSlack
+	SetIncomingWebhookURI(h string) *VSlack
 	SetChannel(c string) *VSlack
 	SetUsername(u string) *VSlack
 	SetIconEmoji(i string) *VSlack
