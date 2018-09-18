@@ -1,5 +1,5 @@
 # VSlack - Go
-### Version 1.2.0
+### Version 1.3.0
 Send messages to slack using a slack incoming web hook in Go.
 
 ## Examples
@@ -66,6 +66,9 @@ func attach() {
 
 
 ## Change Log
+
+### 1.3.0
+- Add mocks to Interface and AttachmentInterface
 
 ### 1.2.0
 - Fix name in Interface of `SetIncomingWebhookURI`
