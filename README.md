@@ -1,5 +1,5 @@
 # VSlack - Go
-### Version 1.3.0
+### Version 1.4.0
 Send messages to slack using a slack incoming web hook in Go.
 
 ## Examples
@@ -65,7 +65,27 @@ func attach() {
 ```
 
 
+### @-tagging Users
+
+``` go
+func tagging() {
+	s := vslack.NewVSlack(incomingWebHook)
+	err := s.SetChannel("#random").
+		SetIconEmoji(":laughing:").
+		SetUsername("VSlack").
+		SetMessage("With great power comes great responsibility, @channel").
+        SetLinkNames(true).
+		Send()
+	if err != nil {
+		panic(err)
+	}
+}
+```
+
 ## Change Log
+
+### 1.4.0
+- Add LinkNames parameter, for enabling @-tagging of users without having to know their slack userid.
 
 ### 1.3.0
 - Add mocks to Interface and AttachmentInterface
