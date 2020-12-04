@@ -1,6 +1,8 @@
 package vslack
 
 // AttachmentInterface is the interface for an attachment
+//
+//go:generate mockery --inpackage --name=AttachmentInterface
 type AttachmentInterface interface {
 	SetText(t string) Attachment
 	SetColor(c string) Attachment

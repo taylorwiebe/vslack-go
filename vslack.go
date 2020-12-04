@@ -5,6 +5,8 @@ import (
 )
 
 // Interface is a VSlack interface
+//
+//go:generate mockery --inpackage --name=Interface
 type Interface interface {
 	SetIncomingWebhookURI(h string) *VSlack
 	SetChannel(c string) *VSlack
@@ -14,6 +16,7 @@ type Interface interface {
 	Send() error
 	SendAsync(e chan error)
 	SetAttachments(a ...Attachment) *VSlack
+	SetLinkNames(linkNames bool) *VSlack
 	validate() error
 }
 
@@ -22,9 +25,10 @@ type VSlack struct {
 	IncomingWebhookURI string       `json:"-"`
 	Message            string       `json:"text,omitempty"`
 	Username           string       `json:"username"`
-	IconEmoji          string       `json:"icon_emoji, omitempty"`
+	IconEmoji          string       `json:"icon_emoji,omitempty"`
 	Channel            string       `json:"channel"`
 	Attachments        []Attachment `json:"attachments,omitempty"`
+	LinkNames          bool         `json:"link_names,omitempty"`
 }
 
 // NewVSlack returns a new instance of VSlack
@@ -70,6 +74,12 @@ func (v *VSlack) SetMessage(m string) *VSlack {
 // SetAttachments takes in attachments
 func (v *VSlack) SetAttachments(a ...Attachment) *VSlack {
 	v.Attachments = append(v.Attachments, a...)
+	return v
+}
+
+// SetLinkNames takes in attachments
+func (v *VSlack) SetLinkNames(linkNames bool) *VSlack {
+	v.LinkNames = linkNames
 	return v
 }
 
