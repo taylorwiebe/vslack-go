@@ -1,4 +1,4 @@
-module github.com/twiebe-va/vslack-go
+module github.com/taylorwiebe/vslack-go
 
 go 1.15
 
