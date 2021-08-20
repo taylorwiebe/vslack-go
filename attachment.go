@@ -7,6 +7,7 @@ type AttachmentInterface interface {
 	SetText(t string) Attachment
 	SetColor(c string) Attachment
 	SetTitle(t string) Attachment
+	SetTitleLink(l string) Attachment
 	SetFields(f ...Field) Attachment
 	SetMarkdown(m bool) Attachment
 	SetMarkdownIn(opts ...MarkdownOption) Attachment
@@ -15,6 +16,7 @@ type AttachmentInterface interface {
 // Attachment is a slack attachment
 type Attachment struct {
 	Title      string   `json:"title"`
+	TitleLink  string   `json:"title_link"`
 	Text       string   `json:"text"`
 	Fallback   string   `json:"fallback"`
 	Markdown   bool     `json:"mrkdwn"`
@@ -44,6 +46,12 @@ func (a Attachment) SetColor(c string) Attachment {
 // SetTitle of the message
 func (a Attachment) SetTitle(t string) Attachment {
 	a.Title = t
+	return a
+}
+
+// SetTitleLink of the message
+func (a Attachment) SetTitleLink(l string) Attachment {
+	a.TitleLink = l
 	return a
 }
 
