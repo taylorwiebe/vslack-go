@@ -104,3 +104,17 @@ func (_m *MockAttachmentInterface) SetTitle(t string) Attachment {
 
 	return r0
 }
+
+// SetTitleLink provides a mock function with given fields: l
+func (_m *MockAttachmentInterface) SetTitleLink(l string) Attachment {
+	ret := _m.Called(l)
+
+	var r0 Attachment
+	if rf, ok := ret.Get(0).(func(string) Attachment); ok {
+		r0 = rf(l)
+	} else {
+		r0 = ret.Get(0).(Attachment)
+	}
+
+	return r0
+}

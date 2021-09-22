@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  mockery:
+    image: vektra/mockery:v2.3.0
+    working_dir: /code
+    command: "--inpackage --name='.*'"
+    volumes:
+      - ./:/code
