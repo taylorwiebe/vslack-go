@@ -2,6 +2,12 @@
 ### Version 1.4.0
 Send messages to slack using a slack incoming web hook in Go.
 
+## Import
+
+```
+import "github.com/taylorwiebe/vslack-go"
+```
+
 ## Examples
 ### synchronous
 ```
